@@ -1,0 +1,4 @@
+id,mac,manufacturer,inclusion,inclusion_ts,exclusion,exclusion_ts,created_timestamp,updated_timestamp,fw_version
+1,<mac>,<mf_name>,1,"2021-05-04 12:12:14.207000",0,NULL,"2021-05-04 13:27:54.352159","2021-05-04 13:27:54.352179",<fw_ver>
+2,<mac>,<mf_name>,1,"2021-05-04 12:12:14.207000",0,NULL,"2021-05-04 13:31:53.523990","2021-05-04 13:31:53.524009",<fw_ver1122>
+3,GATEWAY0001,Jio_Gateways,1,"2021-05-07 11:00:00.000000",0,NULL,"2021-05-07 12:56:06.263383","2021-05-07 12:56:06.263403",1.1.1
