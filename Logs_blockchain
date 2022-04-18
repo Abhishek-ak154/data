@@ -1,0 +1,920 @@
+bhishek@abhishek-Virtual-Machine:~/fabric_project/fabric-samples/asset-transfer-basic/application-javascript$ node blockchain_app_new.js 
+2022-04-18T11:26:11.119Z - debug: Successfully constructed a winston logger with configurations debug=console, info=console
+2022-04-18T11:26:11.411Z - debug: [crypto_ecdsa_aes]: Hash algorithm: SHA2, hash output size: 256
+Loaded the network configuration located at /home/abhishek/fabric_project/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.json
+2022-04-18T11:26:11.631Z - debug: [crypto_ecdsa_aes]: Hash algorithm: SHA2, hash output size: 256
+2022-04-18T11:26:11.635Z - debug: [FabricCAClient.js]: Successfully constructed Fabric CA client from options - {
+  caname: 'ca-org1',
+  protocol: 'https',
+  hostname: 'localhost',
+  port: 7054,
+  tlsOptions: {
+    trustedRoots: [
+      '-----BEGIN CERTIFICATE-----\n' +
+        'MIICJjCCAc2gAwIBAgIUecdjg6/5osItca8w3riSV5m3oiwwCgYIKoZIzj0EAwIw\n' +
+        'cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\n' +
+        'EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\n' +
+        'Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjIwNDE4MTExNzAwWhcNMzcwNDE0MTExNzAw\n' +
+        'WjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV\n' +
+        'BAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT\n' +
+        'Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABG7D\n' +
+        'urU2e8Et4aQv2X2Fu+0J7/rbSRVETk5PlTwKOGt58Q74WAWYxJVwHDLkCllPNMCr\n' +
+        'KqD1ClCSj6I8DYLgEzmjRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG\n' +
+        'AQH/AgEBMB0GA1UdDgQWBBR9FChlYUWj4qkcSNcmjJgSnr2ICTAKBggqhkjOPQQD\n' +
+        'AgNHADBEAiBuNs/GiaQ/Wb8ooME5VU8yHCvVCs81XHHc3WnYStYengIgUbJsO+1b\n' +
+        'S3us0b0NJ57Bo2nkBPGoUBBtZEZUtHYYcNE=\n' +
+        '-----END CERTIFICATE-----\n'
+    ],
+    verify: false
+  }
+}
+2022-04-18T11:26:11.636Z - debug: [FabricCAClientService.js]: Successfully constructed Fabric CA service client: endpoint - {"protocol":"https","hostname":"localhost","port":7054}
+Built a CA Client named ca-org1
+Built a file system wallet at /home/abhishek/fabric_project/fabric-samples/asset-transfer-basic/application-javascript/wallet
+2022-04-18T11:26:11.763Z - debug: [crypto_ecdsa_aes]: generateKey, store.setValue
+2022-04-18T11:26:11.768Z - debug: [FabricCAClientService.js]: successfully generated key pairs
+2022-04-18T11:26:11.861Z - debug: [FabricCAClientService.js]: successfully generated csr
+2022-04-18T11:26:11.861Z - debug: [FabricCAClient.js]: CONNECTION_TIMEOUT = 3000, SO_TIMEOUT = infinite
+2022-04-18T11:26:11.979Z - debug: [FabricCAClientService.js]: successfully enrolled admin
+Successfully enrolled admin user and imported it into the wallet
+2022-04-18T11:26:11.986Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - start
+2022-04-18T11:26:11.989Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - have the key [Circular]
+2022-04-18T11:26:11.989Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - start
+2022-04-18T11:26:11.993Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - have the key [Circular]
+2022-04-18T11:26:11.994Z - debug: [FabricCAClient.js]: CONNECTION_TIMEOUT = 3000, SO_TIMEOUT = infinite
+2022-04-18T11:26:12.013Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[46921024, 34953980, 47942700, 8636485, 33198751, 20734333, 49813328, 28678790, 13215878, 3456547, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[29134876, 46265168, 4467636, 4850299, 26802214, 59909757, 62705451, 63647517, 7832696, 848752], length=10, red=null, recoveryParam=1
+2022-04-18T11:26:12.014Z - debug: [FabricCAClient.js]: signString: POST.L2FwaS92MS9yZWdpc3Rlcg==.eyJpZCI6ImFwcFVzZXIiLCJhZmZpbGlhdGlvbiI6Im9yZzEuZGVwYXJ0bWVudDEiLCJtYXhfZW5yb2xsbWVudHMiOjEsInR5cGUiOiJjbGllbnQiLCJjYW5hbWUiOiJjYS1vcmcxIn0=.LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUI4akNDQVptZ0F3SUJBZ0lVUWY3Mm1uSWFNem1jaWROZkZPWXpLb1RLWjg0d0NnWUlLb1pJemowRUF3SXcKY0RFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1ROHdEUVlEVlFRSApFd1pFZFhKb1lXMHhHVEFYQmdOVkJBb1RFRzl5WnpFdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaekV1WlhoaGJYQnNaUzVqYjIwd0hoY05Nakl3TkRFNE1URXhOekF3V2hjTk1qTXdOREU0TVRFeU5qQXcKV2pBaE1ROHdEUVlEVlFRTEV3WmpiR2xsYm5ReERqQU1CZ05WQkFNVEJXRmtiV2x1TUZrd0V3WUhLb1pJemowQwpBUVlJS29aSXpqMERBUWNEUWdBRUZ5M0hjejZrMkp0WWRNdWVzRWs1MWtUWjVxY1VOS3BvWUhlS1o3Um4vZ1lBCnB5VGtmQ3JVeWg1dTBXSDNBT09lSXlMMkZXVkRaYTVOT3NhbEEzbmtXcU5nTUY0d0RnWURWUjBQQVFIL0JBUUQKQWdlQU1Bd0dBMVVkRXdFQi93UUNNQUF3SFFZRFZSME9CQllFRkI3WGhXblZDRzR2N1JtMmIvdmFCeGM4U2tpaApNQjhHQTFVZEl3UVlNQmFBRkgwVUtHVmhSYVBpcVJ4STF5YU1tQktldllnSk1Bb0dDQ3FHU000OUJBTUNBMGNBCk1FUUNJQytETWtBK1FKN2k4aWtmazdISlhZeEdDc25lRDF5R0ZMS0d6REkrOWVHZUFpQVg2MHdiSldST2xyN2gKQzhMcVFlTjgrUUJMdXErc2IrWGtwdERaNGtMRVh3PT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+2022-04-18T11:26:12.173Z - debug: [crypto_ecdsa_aes]: generateKey, store.setValue
+2022-04-18T11:26:12.174Z - debug: [FabricCAClientService.js]: successfully generated key pairs
+2022-04-18T11:26:12.217Z - debug: [FabricCAClientService.js]: successfully generated csr
+2022-04-18T11:26:12.218Z - debug: [FabricCAClient.js]: CONNECTION_TIMEOUT = 3000, SO_TIMEOUT = infinite
+2022-04-18T11:26:12.350Z - debug: [FabricCAClientService.js]: successfully enrolled appUser
+Successfully registered and enrolled user appUser and imported it into the wallet
+2022-04-18T11:26:12.352Z - debug: [Gateway]: in Gateway constructor
+2022-04-18T11:26:12.353Z - debug: [Gateway]: connect - start
+2022-04-18T11:26:12.353Z - debug: [Gateway]: gateway options: {"wallet":{"providerRegistry":{"providers":{}},"store":{"storePath":"/home/abhishek/fabric_project/fabric-samples/asset-transfer-basic/application-javascript/wallet"}},"identity":"appUser","discovery":{"enabled":true,"asLocalhost":true}}
+2022-04-18T11:26:12.354Z - debug: [Client]: Client.constructor[gateway client] - start 
+2022-04-18T11:26:12.354Z - debug: [Gateway]: connect - setting identity from wallet
+2022-04-18T11:26:12.355Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - start
+2022-04-18T11:26:12.357Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - have the key [Circular]
+2022-04-18T11:26:12.357Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - start
+2022-04-18T11:26:12.361Z - debug: [crypto_ecdsa_aes]: createKeyFromRaw - have the key [Circular]
+2022-04-18T11:26:12.362Z - debug: [Gateway]: connect - using self signed setting for tls
+2022-04-18T11:26:12.363Z - debug: [Client]: setTlsClientCertAndKey: gateway client - start
+2022-04-18T11:26:12.363Z - debug: [Client]: setTlsClientCertAndKey: gateway client - generating self-signed TLS client certificate
+2022-04-18T11:26:12.364Z - debug: [crypto_ecdsa_aes]: Hash algorithm: SHA2, hash output size: 256
+2022-04-18T11:26:12.492Z - debug: [Gateway]: connect - NetworkConfig loading client from ccp
+2022-04-18T11:26:12.492Z - debug: [NetworkConfig]: loadFromConfig - start
+2022-04-18T11:26:12.493Z - debug: [NetworkConfig]: buildPeer - start - peer0.org1.example.com
+2022-04-18T11:26:12.493Z - debug: [NetworkConfig]: findPeerMspid - start for peer0.org1.example.com
+2022-04-18T11:26:12.493Z - debug: [NetworkConfig]: findPeerMspid - checking peer peer0.org1.example.com in org Org1
+2022-04-18T11:26:12.493Z - debug: [NetworkConfig]: findPeerMspid - found mspid Org1MSP for peer0.org1.example.com
+2022-04-18T11:26:12.493Z - debug: [NetworkConfig]: buildOptions - start
+2022-04-18T11:26:12.493Z - debug: [Client]: newEndpoint: gateway client - start
+2022-04-18T11:26:12.493Z - debug: [Client]: getConnectionOptions: gateway client - start
+2022-04-18T11:26:12.494Z - debug: [Client]: getConnectionOptions: gateway client - no centralized options
+2022-04-18T11:26:12.494Z - debug: [Client]: newEndpoint: gateway client grpc-wait-for-ready-timeout set to 3000
+2022-04-18T11:26:12.494Z - debug: [Client]: newEndpoint: gateway client - ssl_target_name_override: peer0.org1.example.com
+2022-04-18T11:26:12.494Z - debug: [Endpoint]: Endpoint.constructor - start 
+2022-04-18T11:26:12.495Z - debug: [Client]: new endpoint url: grpcs://localhost:7051
+2022-04-18T11:26:12.495Z - debug: [NetworkConfig]: buildPeer - about to connect to endorser peer0.org1.example.com url:grpcs://localhost:7051 mspid:Org1MSP
+2022-04-18T11:26:12.496Z - debug: [Client]: getEndorser: gateway client start name:peer0.org1.example.com
+2022-04-18T11:26:12.496Z - debug: [Client]: getEndorser: gateway client create endorser name:peer0.org1.example.com
+2022-04-18T11:26:12.496Z - debug: [Endorser]: Endorser.constructor[peer0.org1.example.com] - start 
+2022-04-18T11:26:12.496Z - debug: [Client]: getEndorser: gateway client return endorser name:peer0.org1.example.com
+2022-04-18T11:26:12.496Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com] - start 
+2022-04-18T11:26:12.496Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com] - create the grpc service for peer0.org1.example.com
+2022-04-18T11:26:12.499Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org1.example.com - grpcs://localhost:7051
+2022-04-18T11:26:12.499Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com - grpcs://localhost:7051
+2022-04-18T11:26:12.524Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com url:grpcs://localhost:7051
+2022-04-18T11:26:12.525Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com] - end - completed the waitForReady for peer0.org1.example.com
+2022-04-18T11:26:12.526Z - debug: [NetworkConfig]: buildPeer - connected to endorser peer0.org1.example.com url:grpcs://localhost:7051
+2022-04-18T11:26:12.526Z - debug: [NetworkConfig]: loadFromConfig - end
+2022-04-18T11:26:12.526Z - debug: [Gateway]: connect - end
+2022-04-18T11:26:12.526Z - debug: [Gateway]: getNetwork - start
+2022-04-18T11:26:12.527Z - debug: [Gateway]: getNetwork - create network object and initialize
+2022-04-18T11:26:12.527Z - debug: [Client]: getChannel: gateway client start name:mychannel
+2022-04-18T11:26:12.527Z - debug: [Client]: getChannel: gateway client create channel name:mychannel
+2022-04-18T11:26:12.528Z - debug: [Channel]: Channel.constructor[mychannel] - start
+2022-04-18T11:26:12.528Z - debug: [Channel]: Channel.constructor[mychannel] - channel name is good mychannel
+2022-04-18T11:26:12.529Z - debug: [Channel]: Constructed Channel instance: name - mychannel
+2022-04-18T11:26:12.529Z - debug: [Client]: getChannel: gateway client return channel name:mychannel
+2022-04-18T11:26:12.529Z - debug: [Network]: constructor - start
+2022-04-18T11:26:12.530Z - debug: [EventSourceManager]: constructor - network:mychannel
+2022-04-18T11:26:12.531Z - debug: [BlockEventSource]: constructor - blockType:filtered
+2022-04-18T11:26:12.531Z - debug: [BlockEventSource]: constructor - blockType:full
+2022-04-18T11:26:12.531Z - debug: [BlockEventSource]: constructor - blockType:private
+2022-04-18T11:26:12.532Z - debug: [Network]: _initialize - start
+2022-04-18T11:26:12.533Z - debug: [Network]: _initializeInternalChannel - start
+2022-04-18T11:26:12.533Z - debug: [Network]: _initializeInternalChannel - initialize with discovery
+2022-04-18T11:26:12.533Z - debug: [Network]: _initializeInternalChannel - user has not specified discovery targets, check channel and client
+2022-04-18T11:26:12.533Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:26:12.534Z - debug: [Channel]: _getServiceEndpoints - start - Org1MSP
+2022-04-18T11:26:12.534Z - debug: [Client]: getEndorsers[gateway client] - start
+2022-04-18T11:26:12.534Z - debug: [Channel]: _getServiceEndpoints - start - Org1MSP
+2022-04-18T11:26:12.534Z - debug: [Channel]: _getServiceEndpoints - Endorser mspid matched, added peer0.org1.example.com connected: true
+2022-04-18T11:26:12.534Z - debug: [Network]: _initializeInternalChannel - using channel/client targets
+2022-04-18T11:26:12.534Z - debug: [Client]: newDiscoverer: gateway client start name:peer0.org1.example.com
+2022-04-18T11:26:12.535Z - debug: [Discoverer]: Discoverer.constructor[peer0.org1.example.com] - start 
+2022-04-18T11:26:12.535Z - debug: [Client]: newDiscoverer: gateway client return new Discoverer name:peer0.org1.example.com
+2022-04-18T11:26:12.535Z - debug: [ServiceEndpoint]: setEndpoint[Discoverer-peer0.org1.example.com] - start 
+2022-04-18T11:26:12.535Z - debug: [ServiceEndpoint]: setEndpoint[Discoverer-peer0.org1.example.com] - endpoint has been set for peer0.org1.example.com-grpcs://localhost:7051
+2022-04-18T11:26:12.535Z - debug: [Channel]: newDiscoveryService[mychannel] - start
+2022-04-18T11:26:12.536Z - debug: [DiscoveryService]: DiscoveryService.constructor[mychannel] - start 
+2022-04-18T11:26:12.536Z - debug: [ServiceAction]: ServiceAction.constructor - start [mychannel]
+2022-04-18T11:26:12.537Z - debug: [DiscoveryService]: build[mychannel] - start
+2022-04-18T11:26:12.537Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:26:12.538Z - debug: [Client]: getClientCertHash: gateway client - start
+2022-04-18T11:26:12.538Z - debug: [Client]: getClientCertHash: gateway client - using clientCert -----BEGIN CERTIFICATE-----
+MIIBVTCB+6ADAgECAgEEMAoGCCqGSM49BAMCMBgxFjAUBgNVBAMMDWZhYnJpYy1j
+b21tb24wIhgPMjAyMjA0MTgxMDAyNTJaGA8yMDIyMDQxOTA0MDYxMlowGDEWMBQG
+A1UEAwwNZmFicmljLWNvbW1vbjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABChP
++27WSKkTnOzuJZhE6a8FjoFN5tNT+5PvDejijC3FQo+rg94jCootveW3TGwixbYK
+EbWFuRapMHhodK1HSVOjMjAwMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMBMG
+A1UdJQQMMAoGCCsGAQUFBwMCMAoGCCqGSM49BAMCA0kAMEYCIQChMeneINtkPLU9
+mtvCCno0A65x2z6lrZBmWgb3baHNSwIhAJKJBiNtyrY+KlokLC+8vc/nveKkBpdp
+6rzhrzkQoeyk
+-----END CERTIFICATE-----
+
+2022-04-18T11:26:12.539Z - debug: [DiscoveryService]: build[mychannel] - adding config query
+2022-04-18T11:26:12.540Z - debug: [DiscoveryService]: build[mychannel] - adding peer membership query
+2022-04-18T11:26:12.540Z - debug: [DiscoveryService]: build[mychannel] - NOT adding chaincodes/collections query
+2022-04-18T11:26:12.541Z - debug: [DiscoveryService]: build[mychannel] - end
+2022-04-18T11:26:12.541Z - debug: [ServiceAction]: sign[DiscoveryService:mychannel] - start
+2022-04-18T11:26:12.541Z - debug: [IdentityContext]: sign - start
+2022-04-18T11:26:12.547Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[36954087, 52659732, 61351249, 5759200, 9307258, 15308538, 44834908, 22722848, 49187024, 737006, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[15452111, 61493251, 57350931, 35181970, 51249221, 66889248, 26869014, 54205413, 50554658, 201318], length=10, red=null, recoveryParam=1
+2022-04-18T11:26:12.547Z - debug: [IdentityContext]: sign - end
+2022-04-18T11:26:12.547Z - debug: [ServiceAction]: sign[DiscoveryService:mychannel] - end
+2022-04-18T11:26:12.547Z - debug: [Network]: _initializeInternalChannel - will discover asLocalhost:true
+2022-04-18T11:26:12.547Z - debug: [DiscoveryService]: send[mychannel] - start
+2022-04-18T11:26:12.547Z - debug: [ServiceAction]: getSignedEnvelope[DiscoveryService:mychannel] - start
+2022-04-18T11:26:12.548Z - debug: [DiscoveryService]: send[mychannel] - about to discover on grpcs://localhost:7051
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: checkConnection[Discoverer-peer0.org1.example.com] - start - connected:false
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: isConnectable[Discoverer-peer0.org1.example.com] - start 
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: isConnectable[Discoverer-peer0.org1.example.com] - this service endpoint has been assigned an endpoint, connect may be run
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: resetConnection[Discoverer-peer0.org1.example.com] - start - connected:false
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: disconnect[Discoverer-peer0.org1.example.com] - start on ServiceEndpoint
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: disconnect[Discoverer-peer0.org1.example.com] - end on ServiceEndpoint
+2022-04-18T11:26:12.548Z - debug: [ServiceEndpoint]: resetConnection[Discoverer-peer0.org1.example.com] - create the grpc service for peer0.org1.example.com
+2022-04-18T11:26:12.549Z - debug: [ServiceEndpoint]: waitForReady - start Discoverer-peer0.org1.example.com - grpcs://localhost:7051
+2022-04-18T11:26:12.549Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com - grpcs://localhost:7051
+2022-04-18T11:26:12.550Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com url:grpcs://localhost:7051
+2022-04-18T11:26:12.551Z - debug: [ServiceEndpoint]: resetConnection[Discoverer-peer0.org1.example.com] - end - connected:true
+2022-04-18T11:26:12.551Z - debug: [ServiceEndpoint]: checkConnection[Discoverer-peer0.org1.example.com] - end - connected:true
+2022-04-18T11:26:12.551Z - debug: [Discoverer]: sendDiscovery[peer0.org1.example.com] - start ----peer0.org1.example.com grpcs://localhost:7051
+2022-04-18T11:26:12.603Z - debug: [Discoverer]: sendDiscovery[peer0.org1.example.com] - Received discovery response from peer "grpcs://localhost:7051"
+2022-04-18T11:26:12.603Z - debug: [DiscoveryService]: send[mychannel] - processing discovery response
+2022-04-18T11:26:12.603Z - debug: [DiscoveryService]: send[mychannel] - parse discovery response.results
+2022-04-18T11:26:12.604Z - debug: [DiscoveryService]: send[mychannel] - process result index:0
+2022-04-18T11:26:12.604Z - debug: [DiscoveryService]: send[mychannel] - process result - have configResult in 0
+2022-04-18T11:26:12.604Z - debug: [DiscoveryService]: _processConfig[mychannel] - start
+2022-04-18T11:26:12.604Z - debug: [DiscoveryService]: _processConfig[mychannel] - found organization OrdererMSP
+2022-04-18T11:26:12.606Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:26:12.606Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: OrdererMSP
+2022-04-18T11:26:12.606Z - debug: [DiscoveryService]: _processConfig[mychannel] - found organization Org1MSP
+2022-04-18T11:26:12.606Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:26:12.607Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: Org1MSP
+2022-04-18T11:26:12.607Z - debug: [DiscoveryService]: _processConfig[mychannel] - found organization Org2MSP
+2022-04-18T11:26:12.607Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:26:12.607Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: Org2MSP
+2022-04-18T11:26:12.607Z - debug: [DiscoveryService]: _processConfig[mychannel] - found orderer org: OrdererMSP
+2022-04-18T11:26:12.607Z - debug: [DiscoveryService]: _buildOrderers[mychannel] - start
+2022-04-18T11:26:12.608Z - debug: [DiscoveryService]: _buildOrderers[mychannel] - orderer msp:OrdererMSP
+2022-04-18T11:26:12.608Z - debug: [DiscoveryService]: _buildOrderer[mychannel] - start mspid:OrdererMSP endpoint:orderer.example.com:7050
+2022-04-18T11:26:12.608Z - debug: [DiscoveryService]: _buildUrl[mychannel] - start
+2022-04-18T11:26:12.608Z - debug: [DiscoveryService]: _buildOrderer[mychannel] - create a new orderer grpcs://localhost:7050
+2022-04-18T11:26:12.609Z - debug: [Client]: newCommitter: gateway client start name:orderer.example.com:7050
+2022-04-18T11:26:12.609Z - debug: [Committer]: Committer.constructor[orderer.example.com:7050] - start 
+2022-04-18T11:26:12.609Z - debug: [Client]: newCommitter: gateway client return new committer name:orderer.example.com:7050
+2022-04-18T11:26:12.609Z - debug: [DiscoveryService]: _buildOptions[mychannel] - start
+2022-04-18T11:26:12.609Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - start
+2022-04-18T11:26:12.610Z - debug: [DiscoveryService]: Found msp OrdererMSP
+2022-04-18T11:26:12.610Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - no tls intermediate certs
+2022-04-18T11:26:12.610Z - debug: [Client]: newEndpoint: gateway client - start
+2022-04-18T11:26:12.610Z - debug: [Client]: getConnectionOptions: gateway client - start
+2022-04-18T11:26:12.610Z - debug: [Client]: getConnectionOptions: gateway client - no centralized options
+2022-04-18T11:26:12.610Z - debug: [Client]: newEndpoint: gateway client grpc-wait-for-ready-timeout set to 3000
+2022-04-18T11:26:12.610Z - debug: [Client]: newEndpoint: gateway client - ssl_target_name_override: orderer.example.com
+2022-04-18T11:26:12.611Z - debug: [Endpoint]: Endpoint.constructor - start 
+2022-04-18T11:26:12.612Z - debug: [Client]: new endpoint url: grpcs://localhost:7050
+2022-04-18T11:26:12.612Z - debug: [Channel]: getCommitters[mychannel] - start
+2022-04-18T11:26:12.612Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:26:12.612Z - debug: [ServiceEndpoint]: connect[Committer-orderer.example.com:7050] - start 
+2022-04-18T11:26:12.613Z - debug: [ServiceEndpoint]: connect[Committer-orderer.example.com:7050] - create the grpc service for orderer.example.com:7050
+2022-04-18T11:26:12.613Z - debug: [ServiceEndpoint]: waitForReady - start Committer-orderer.example.com:7050 - grpcs://localhost:7050
+2022-04-18T11:26:12.614Z - debug: [ServiceEndpoint]: waitForReady - promise running orderer.example.com:7050 - grpcs://localhost:7050
+2022-04-18T11:26:12.620Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server orderer.example.com:7050 url:grpcs://localhost:7050
+2022-04-18T11:26:12.620Z - debug: [ServiceEndpoint]: connect[Committer-orderer.example.com:7050] - end - completed the waitForReady for orderer.example.com:7050
+2022-04-18T11:26:12.620Z - debug: [Channel]: addCommitter[mychannel] - start
+2022-04-18T11:26:12.621Z - debug: [ServiceEndpoint]: isConnectable[Committer-orderer.example.com:7050] - start 
+2022-04-18T11:26:12.621Z - debug: [ServiceEndpoint]: isConnectable[Committer-orderer.example.com:7050] - this servive endpoint has been connected
+2022-04-18T11:26:12.621Z - debug: [Channel]: addCommitter[mychannel] - adding a new Committer  --name: orderer.example.com:7050
+2022-04-18T11:26:12.621Z - debug: [DiscoveryService]: send[mychannel] - completed processing result 0
+2022-04-18T11:26:12.621Z - debug: [DiscoveryService]: send[mychannel] - process result index:1
+2022-04-18T11:26:12.621Z - debug: [DiscoveryService]: send[mychannel] - process result - have members in 1
+2022-04-18T11:26:12.621Z - debug: [DiscoveryService]: _processMembership[mychannel] - start
+2022-04-18T11:26:12.621Z - debug: [DiscoveryService]: _processMembership[mychannel] - found org:Org1MSP
+2022-04-18T11:26:12.622Z - debug: [DiscoveryService]: _processPeers[mychannel] - peer :peer0.org1.example.com:7051
+2022-04-18T11:26:12.623Z - debug: [DiscoveryService]: _processPeers[mychannel] - ledgerHeight :6
+2022-04-18T11:26:12.624Z - debug: [DiscoveryService]: _processPeers[mychannel] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:26:12.624Z - debug: [DiscoveryService]: _processPeers[mychannel] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:26:12.624Z - debug: [DiscoveryService]: _buildPeer[mychannel] - start
+2022-04-18T11:26:12.624Z - debug: [DiscoveryService]: _buildUrl[mychannel] - start
+2022-04-18T11:26:12.624Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:26:12.624Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:26:12.624Z - debug: [DiscoveryService]: _buildPeer[mychannel] - create a new endorser grpcs://localhost:7051
+2022-04-18T11:26:12.625Z - debug: [Client]: newEndorser: gateway client start name:peer0.org1.example.com:7051
+2022-04-18T11:26:12.625Z - debug: [Endorser]: Endorser.constructor[peer0.org1.example.com:7051] - start 
+2022-04-18T11:26:12.625Z - debug: [Client]: newEndorser: gateway client return new endorser name:peer0.org1.example.com:7051
+2022-04-18T11:26:12.625Z - debug: [DiscoveryService]: _buildOptions[mychannel] - start
+2022-04-18T11:26:12.625Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - start
+2022-04-18T11:26:12.625Z - debug: [DiscoveryService]: Found msp Org1MSP
+2022-04-18T11:26:12.625Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - no tls intermediate certs
+2022-04-18T11:26:12.625Z - debug: [Client]: newEndpoint: gateway client - start
+2022-04-18T11:26:12.625Z - debug: [Client]: getConnectionOptions: gateway client - start
+2022-04-18T11:26:12.625Z - debug: [Client]: getConnectionOptions: gateway client - no centralized options
+2022-04-18T11:26:12.625Z - debug: [Client]: newEndpoint: gateway client grpc-wait-for-ready-timeout set to 3000
+2022-04-18T11:26:12.626Z - debug: [Client]: newEndpoint: gateway client - ssl_target_name_override: peer0.org1.example.com
+2022-04-18T11:26:12.626Z - debug: [Endpoint]: Endpoint.constructor - start 
+2022-04-18T11:26:12.626Z - debug: [Client]: new endpoint url: grpcs://localhost:7051
+2022-04-18T11:26:12.626Z - debug: [DiscoveryService]: _buildPeer[mychannel] - about to connect to endorser peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:26:12.626Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com:7051] - start 
+2022-04-18T11:26:12.627Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com:7051] - create the grpc service for peer0.org1.example.com:7051
+2022-04-18T11:26:12.627Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:26:12.627Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:26:12.633Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:26:12.634Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org1.example.com:7051] - end - completed the waitForReady for peer0.org1.example.com:7051
+2022-04-18T11:26:12.634Z - debug: [Channel]: addEndorser[mychannel] - start
+2022-04-18T11:26:12.634Z - debug: [ServiceEndpoint]: isConnectable[Endorser-peer0.org1.example.com:7051] - start 
+2022-04-18T11:26:12.634Z - debug: [ServiceEndpoint]: isConnectable[Endorser-peer0.org1.example.com:7051] - this servive endpoint has been connected
+2022-04-18T11:26:12.634Z - debug: [Channel]: addEndorser[mychannel] - adding a new Endorser  --name: peer0.org1.example.com:7051
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _buildPeer[mychannel] - connected to peer peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _buildPeer[mychannel] - adding chaincode basic to peer peer0.org1.example.com:7051
+2022-04-18T11:26:12.635Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode not found on this endorser - basic
+2022-04-18T11:26:12.635Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode added to this endorser - basic
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _buildPeer[mychannel] - adding chaincode _lifecycle to peer peer0.org1.example.com:7051
+2022-04-18T11:26:12.635Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode not found on this endorser - _lifecycle
+2022-04-18T11:26:12.635Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode added to this endorser - _lifecycle
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _buildPeer[mychannel] - end
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _processMembership[mychannel] - found org:Org2MSP
+2022-04-18T11:26:12.635Z - debug: [DiscoveryService]: _processPeers[mychannel] - peer :peer0.org2.example.com:9051
+2022-04-18T11:26:12.636Z - debug: [DiscoveryService]: _processPeers[mychannel] - ledgerHeight :6
+2022-04-18T11:26:12.636Z - debug: [DiscoveryService]: _processPeers[mychannel] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:26:12.637Z - debug: [DiscoveryService]: _processPeers[mychannel] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:26:12.637Z - debug: [DiscoveryService]: _buildPeer[mychannel] - start
+2022-04-18T11:26:12.637Z - debug: [DiscoveryService]: _buildUrl[mychannel] - start
+2022-04-18T11:26:12.637Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:26:12.637Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:26:12.637Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:26:12.637Z - debug: [DiscoveryService]: _buildPeer[mychannel] - checking channel peer peer0.org1.example.com:7051
+2022-04-18T11:26:12.637Z - debug: [DiscoveryService]: _buildPeer[mychannel] - create a new endorser grpcs://localhost:9051
+2022-04-18T11:26:12.638Z - debug: [Client]: newEndorser: gateway client start name:peer0.org2.example.com:9051
+2022-04-18T11:26:12.638Z - debug: [Endorser]: Endorser.constructor[peer0.org2.example.com:9051] - start 
+2022-04-18T11:26:12.638Z - debug: [Client]: newEndorser: gateway client return new endorser name:peer0.org2.example.com:9051
+2022-04-18T11:26:12.638Z - debug: [DiscoveryService]: _buildOptions[mychannel] - start
+2022-04-18T11:26:12.638Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - start
+2022-04-18T11:26:12.638Z - debug: [DiscoveryService]: Found msp Org2MSP
+2022-04-18T11:26:12.638Z - debug: [DiscoveryService]: _buildTlsRootCerts[mychannel] - no tls intermediate certs
+2022-04-18T11:26:12.638Z - debug: [Client]: newEndpoint: gateway client - start
+2022-04-18T11:26:12.638Z - debug: [Client]: getConnectionOptions: gateway client - start
+2022-04-18T11:26:12.638Z - debug: [Client]: getConnectionOptions: gateway client - no centralized options
+2022-04-18T11:26:12.638Z - debug: [Client]: newEndpoint: gateway client grpc-wait-for-ready-timeout set to 3000
+2022-04-18T11:26:12.639Z - debug: [Client]: newEndpoint: gateway client - ssl_target_name_override: peer0.org2.example.com
+2022-04-18T11:26:12.639Z - debug: [Endpoint]: Endpoint.constructor - start 
+2022-04-18T11:26:12.640Z - debug: [Client]: new endpoint url: grpcs://localhost:9051
+2022-04-18T11:26:12.640Z - debug: [DiscoveryService]: _buildPeer[mychannel] - about to connect to endorser peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:26:12.640Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org2.example.com:9051] - start 
+2022-04-18T11:26:12.640Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org2.example.com:9051] - create the grpc service for peer0.org2.example.com:9051
+2022-04-18T11:26:12.641Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:26:12.641Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:26:12.648Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:26:12.649Z - debug: [ServiceEndpoint]: connect[Endorser-peer0.org2.example.com:9051] - end - completed the waitForReady for peer0.org2.example.com:9051
+2022-04-18T11:26:12.649Z - debug: [Channel]: addEndorser[mychannel] - start
+2022-04-18T11:26:12.649Z - debug: [ServiceEndpoint]: isConnectable[Endorser-peer0.org2.example.com:9051] - start 
+2022-04-18T11:26:12.649Z - debug: [ServiceEndpoint]: isConnectable[Endorser-peer0.org2.example.com:9051] - this servive endpoint has been connected
+2022-04-18T11:26:12.649Z - debug: [Channel]: addEndorser[mychannel] - adding a new Endorser  --name: peer0.org2.example.com:9051
+2022-04-18T11:26:12.649Z - debug: [DiscoveryService]: _buildPeer[mychannel] - connected to peer peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:26:12.649Z - debug: [DiscoveryService]: _buildPeer[mychannel] - adding chaincode basic to peer peer0.org2.example.com:9051
+2022-04-18T11:26:12.649Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode not found on this endorser - basic
+2022-04-18T11:26:12.650Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode added to this endorser - basic
+2022-04-18T11:26:12.650Z - debug: [DiscoveryService]: _buildPeer[mychannel] - adding chaincode _lifecycle to peer peer0.org2.example.com:9051
+2022-04-18T11:26:12.650Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode not found on this endorser - _lifecycle
+2022-04-18T11:26:12.650Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode added to this endorser - _lifecycle
+2022-04-18T11:26:12.650Z - debug: [DiscoveryService]: _buildPeer[mychannel] - end
+2022-04-18T11:26:12.650Z - debug: [DiscoveryService]: send[mychannel] - completed processing result 1
+2022-04-18T11:26:12.650Z - debug: [Network]: _initializeInternalChannel - discovery complete - channel is populated
+2022-04-18T11:26:12.650Z - debug: [Network]: _initializeInternalChannel - end
+2022-04-18T11:26:12.651Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:26:12.651Z - debug: [Channel]: _getServiceEndpoints - start - Org1MSP
+2022-04-18T11:26:12.651Z - debug: [Channel]: _getServiceEndpoints - Endorser mspid matched, added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:26:12.651Z - debug: [Channel]: _getServiceEndpoints - Endorser mspid not matched, not added peer0.org2.example.com:9051 - Org2MSP
+2022-04-18T11:26:12.651Z - debug: [SingleQueryHandler]: constructor: peers=["peer0.org1.example.com:7051"]
+2022-04-18T11:26:12.651Z - debug: [Network]: _initialize - end
+2022-04-18T11:26:12.651Z - debug: [Network]: getContract - start - name 
+2022-04-18T11:26:12.651Z - debug: [Contract]: constructor[] - start
+2022-04-18T11:26:12.651Z - debug: [Network]: getContract - create new contract basic
+
+
+Connection Respond :  Sucessful
+
+
+Client is Connected to MQTT
+Client has subscribed to the topic :  ClientToNetwork
+Recieved Message from: ClientToNetwork { "BlockChain_TransactionType": "Create", "AssetId": "4000", "AssetName": "Grapes", "Quantity": "18", "Owner": "real", "Price": "1200", "location": "delhi", "FoodQuality": "Rotten Banana", "UserName": "ak"}
+Publish Approval request to  kramis
+Data published to kramis
+Recieved Message from: ClientToNetwork { "BlockChain_TransactionType": "Approval","status" :"Yes" , "AssetId": "4000", "AssetName": "Grapes", "Quantity": "18", "Owner": "real", "Price": "1200", "location": "delhi", "FoodQuality": "Rotten Banana", "UserName": "ak", "id": 3508 }
+
+--> Submit Transaction: CreateAsset, creates new asset with ID, color, owner, size, and appraisedValue arguments
+2022-04-18T11:27:38.507Z - debug: [Transaction]: constructor[CreateAsset] - start
+2022-04-18T11:27:38.507Z - debug: [IdentityContext]: calculateTransactionId - start
+2022-04-18T11:27:38.508Z - debug: [IdentityContext]: calculateTransactionId - nonce:ced96ba11db3ef8853948e8ef3cbe2047488ca469bda999a
+2022-04-18T11:27:38.508Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:27:38.509Z - debug: [IdentityContext]: calculateTransactionId - txid:4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+2022-04-18T11:27:38.510Z - debug: [Transaction]: submit[CreateAsset] - start
+2022-04-18T11:27:38.510Z - debug: [Channel]: newEndorsement[mychannel] - start
+2022-04-18T11:27:38.510Z - debug: [ServiceAction]: ServiceAction.constructor - start [basic]
+2022-04-18T11:27:38.511Z - debug: [Proposal]: Proposal.constructor[basic] - start 
+2022-04-18T11:27:38.511Z - debug: [Endorsement]: constructor[basic] - start
+2022-04-18T11:27:38.511Z - debug: [Transaction]: submit[CreateAsset] - build and send the endorsement
+2022-04-18T11:27:38.511Z - debug: [Proposal]: build[basic][Endorsement] - start
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding function CreateAsset
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>4000<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>Grapes<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>18<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>real<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>1200<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>delhi<==
+2022-04-18T11:27:38.512Z - debug: [Proposal]: build[basic][Endorsement] - adding arg ==>Rotten Banana<==
+2022-04-18T11:27:38.513Z - debug: [Channel]: buildChannelHeader[mychannel] - start - type 3 chaincode_id basic tx_id 4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+2022-04-18T11:27:38.514Z - debug: [Channel]: buildChannelHeader[mychannel] - chaincodeID {"name":"basic"}
+2022-04-18T11:27:38.514Z - debug: [Channel]: buildChannelHeader[mychannel] - ChaincodeHeaderExtension {"type":"Buffer","data":[18,7,18,5,98,97,115,105,99]}
+2022-04-18T11:27:38.514Z - debug: [Channel]: buildCurrentTimestamp[undefined] - start
+2022-04-18T11:27:38.514Z - debug: [Channel]: buildCurrentTimestamp[undefined] - seconds 1650281258 nanos 514000000
+2022-04-18T11:27:38.515Z - debug: [Client]: getClientCertHash: gateway client - start
+2022-04-18T11:27:38.515Z - debug: [ServiceAction]: buildHeader - start
+2022-04-18T11:27:38.516Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:27:38.516Z - debug: [ServiceAction]: sign[Endorsement:basic] - start
+2022-04-18T11:27:38.516Z - debug: [IdentityContext]: sign - start
+2022-04-18T11:27:38.531Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[19267028, 23709938, 54375666, 29623337, 58908255, 12273297, 47330985, 33537346, 51462877, 500133, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[42754891, 28925702, 56184496, 60131804, 33104068, 37819114, 56382992, 25719319, 4627187, 2078554], length=10, red=null, recoveryParam=1
+2022-04-18T11:27:38.532Z - debug: [IdentityContext]: sign - end
+2022-04-18T11:27:38.532Z - debug: [ServiceAction]: sign[Endorsement:basic] - end
+2022-04-18T11:27:38.532Z - debug: [Transaction]: submit[CreateAsset] - discovery handler will be used for endorsing
+2022-04-18T11:27:38.532Z - debug: [Contract]: getDiscoveryHandler[basic] - start
+2022-04-18T11:27:38.532Z - debug: [Contract]: getDiscoveryHandler[basic] - setting up contract discovery
+2022-04-18T11:27:38.532Z - debug: [Channel]: newDiscoveryService[mychannel] - start
+2022-04-18T11:27:38.532Z - debug: [DiscoveryService]: DiscoveryService.constructor[basic] - start 
+2022-04-18T11:27:38.532Z - debug: [ServiceAction]: ServiceAction.constructor - start [basic]
+2022-04-18T11:27:38.533Z - debug: [Contract]: getDiscoveryHandler[basic] - using discovery interest [{"name":"basic"}]
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: build[basic] - start
+2022-04-18T11:27:38.533Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:27:38.533Z - debug: [Client]: getClientCertHash: gateway client - start
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: build[basic] - request interest: [{"name":"basic"}]
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: build[basic] - adding config query
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: build[basic] - adding peer membership query
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: _buildProtoChaincodeInterest[basic] - start
+2022-04-18T11:27:38.533Z - debug: [DiscoveryService]: build[basic] - adding chaincodes/collections query
+2022-04-18T11:27:38.534Z - debug: [DiscoveryService]: build[basic] - end
+2022-04-18T11:27:38.534Z - debug: [ServiceAction]: sign[DiscoveryService:basic] - start
+2022-04-18T11:27:38.534Z - debug: [IdentityContext]: sign - start
+2022-04-18T11:27:38.542Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[36806814, 14276903, 8410076, 49561337, 20380326, 8635932, 51586323, 61322900, 66931260, 270960, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[56983424, 55706612, 2358861, 27540082, 9587408, 9031388, 57033689, 36064455, 16825284, 1021483], length=10, red=null, recoveryParam=1
+2022-04-18T11:27:38.542Z - debug: [IdentityContext]: sign - end
+2022-04-18T11:27:38.542Z - debug: [ServiceAction]: sign[DiscoveryService:basic] - end
+2022-04-18T11:27:38.542Z - debug: [DiscoveryService]: send[basic] - start
+2022-04-18T11:27:38.542Z - debug: [ServiceAction]: getSignedEnvelope[DiscoveryService:basic] - start
+2022-04-18T11:27:38.542Z - debug: [DiscoveryService]: send[basic] - about to discover on grpcs://localhost:7051
+2022-04-18T11:27:38.542Z - debug: [ServiceEndpoint]: checkConnection[Discoverer-peer0.org1.example.com] - start - connected:true
+2022-04-18T11:27:38.543Z - debug: [ServiceEndpoint]: waitForReady - start Discoverer-peer0.org1.example.com - grpcs://localhost:7051
+2022-04-18T11:27:38.543Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com - grpcs://localhost:7051
+Submit blockchain txn
+2022-04-18T11:27:38.543Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com url:grpcs://localhost:7051
+2022-04-18T11:27:38.543Z - debug: [ServiceEndpoint]: checkConnection[Discoverer-peer0.org1.example.com] - end - connected:true
+2022-04-18T11:27:38.543Z - debug: [Discoverer]: sendDiscovery[peer0.org1.example.com] - start ----peer0.org1.example.com grpcs://localhost:7051
+2022-04-18T11:27:38.556Z - debug: [Discoverer]: sendDiscovery[peer0.org1.example.com] - Received discovery response from peer "grpcs://localhost:7051"
+2022-04-18T11:27:38.556Z - debug: [DiscoveryService]: send[basic] - processing discovery response
+2022-04-18T11:27:38.556Z - debug: [DiscoveryService]: send[basic] - parse discovery response.results
+2022-04-18T11:27:38.556Z - debug: [DiscoveryService]: send[basic] - process result index:0
+2022-04-18T11:27:38.557Z - debug: [DiscoveryService]: send[basic] - process result - have configResult in 0
+2022-04-18T11:27:38.557Z - debug: [DiscoveryService]: _processConfig[basic] - start
+2022-04-18T11:27:38.557Z - debug: [DiscoveryService]: _processConfig[basic] - found organization OrdererMSP
+2022-04-18T11:27:38.557Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:27:38.557Z - debug: [Channel]: addMsp[mychannel] - removing existing MSP  --name: OrdererMSP
+2022-04-18T11:27:38.558Z - debug: [Channel]: removeMsp[mychannel] - start
+2022-04-18T11:27:38.558Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: OrdererMSP
+2022-04-18T11:27:38.559Z - debug: [DiscoveryService]: _processConfig[basic] - found organization Org1MSP
+2022-04-18T11:27:38.559Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:27:38.559Z - debug: [Channel]: addMsp[mychannel] - removing existing MSP  --name: Org1MSP
+2022-04-18T11:27:38.559Z - debug: [Channel]: removeMsp[mychannel] - start
+2022-04-18T11:27:38.560Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: Org1MSP
+2022-04-18T11:27:38.560Z - debug: [DiscoveryService]: _processConfig[basic] - found organization Org2MSP
+2022-04-18T11:27:38.560Z - debug: [Channel]: addMsp[mychannel] - start
+2022-04-18T11:27:38.560Z - debug: [Channel]: addMsp[mychannel] - removing existing MSP  --name: Org2MSP
+2022-04-18T11:27:38.560Z - debug: [Channel]: removeMsp[mychannel] - start
+2022-04-18T11:27:38.560Z - debug: [Channel]: addMsp[mychannel] - adding a new MSP  --name: Org2MSP
+2022-04-18T11:27:38.560Z - debug: [DiscoveryService]: _processConfig[basic] - found orderer org: OrdererMSP
+2022-04-18T11:27:38.560Z - debug: [DiscoveryService]: _buildOrderers[basic] - start
+2022-04-18T11:27:38.560Z - debug: [DiscoveryService]: _buildOrderers[basic] - orderer msp:OrdererMSP
+2022-04-18T11:27:38.560Z - debug: [DiscoveryService]: _buildOrderer[basic] - start mspid:OrdererMSP endpoint:orderer.example.com:7050
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: _buildOrderer[basic] - create a new orderer grpcs://localhost:7050
+2022-04-18T11:27:38.561Z - debug: [Client]: newCommitter: gateway client start name:orderer.example.com:7050
+2022-04-18T11:27:38.561Z - debug: [Committer]: Committer.constructor[orderer.example.com:7050] - start 
+2022-04-18T11:27:38.561Z - debug: [Client]: newCommitter: gateway client return new committer name:orderer.example.com:7050
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: _buildOptions[basic] - start
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: _buildTlsRootCerts[basic] - start
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: Found msp OrdererMSP
+2022-04-18T11:27:38.561Z - debug: [DiscoveryService]: _buildTlsRootCerts[basic] - no tls intermediate certs
+2022-04-18T11:27:38.561Z - debug: [Client]: newEndpoint: gateway client - start
+2022-04-18T11:27:38.562Z - debug: [Client]: getConnectionOptions: gateway client - start
+2022-04-18T11:27:38.562Z - debug: [Client]: getConnectionOptions: gateway client - no centralized options
+2022-04-18T11:27:38.562Z - debug: [Client]: newEndpoint: gateway client grpc-wait-for-ready-timeout set to 3000
+2022-04-18T11:27:38.562Z - debug: [Client]: newEndpoint: gateway client - ssl_target_name_override: orderer.example.com
+2022-04-18T11:27:38.562Z - debug: [Endpoint]: Endpoint.constructor - start 
+2022-04-18T11:27:38.563Z - debug: [Client]: new endpoint url: grpcs://localhost:7050
+2022-04-18T11:27:38.563Z - debug: [Channel]: getCommitters[mychannel] - start
+2022-04-18T11:27:38.563Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.563Z - debug: [Channel]: _getServiceEndpoints - Committer added orderer.example.com:7050 connected: true
+2022-04-18T11:27:38.564Z - debug: [DiscoveryService]: _buildOrderer[basic] - checking Committer- name: orderer.example.com:7050, url:grpcs://localhost:7050, connected:true, connectAttempted:true
+2022-04-18T11:27:38.564Z - debug: [ServiceEndpoint]: checkConnection[Committer-orderer.example.com:7050] - start - connected:true
+2022-04-18T11:27:38.564Z - debug: [ServiceEndpoint]: waitForReady - start Committer-orderer.example.com:7050 - grpcs://localhost:7050
+2022-04-18T11:27:38.564Z - debug: [ServiceEndpoint]: waitForReady - promise running orderer.example.com:7050 - grpcs://localhost:7050
+2022-04-18T11:27:38.564Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server orderer.example.com:7050 url:grpcs://localhost:7050
+2022-04-18T11:27:38.565Z - debug: [ServiceEndpoint]: checkConnection[Committer-orderer.example.com:7050] - end - connected:true
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: _buildOrderer[basic] - orderer already added to this channel
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: send[basic] - completed processing result 0
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: send[basic] - process result index:1
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: send[basic] - process result - have members in 1
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: _processMembership[basic] - start
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: _processMembership[basic] - found org:Org1MSP
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: _processPeers[basic] - peer :peer0.org1.example.com:7051
+2022-04-18T11:27:38.565Z - debug: [DiscoveryService]: _processPeers[basic] - ledgerHeight :6
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _buildPeer[basic] - start
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.566Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.566Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.566Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.566Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.566Z - debug: [DiscoveryService]: _buildPeer[basic] - url: grpcs://localhost:7051 - already added to this channel
+2022-04-18T11:27:38.566Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - start - connected:true
+2022-04-18T11:27:38.567Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.567Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.567Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:27:38.567Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - end - connected:true
+2022-04-18T11:27:38.567Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode basic to peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.567Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode found on this endorser discovered chaincodes - basic
+2022-04-18T11:27:38.567Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode already exist on this endorser - basic
+2022-04-18T11:27:38.567Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode _lifecycle to peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.568Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode found on this endorser discovered chaincodes - _lifecycle
+2022-04-18T11:27:38.568Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode already exist on this endorser - _lifecycle
+2022-04-18T11:27:38.568Z - debug: [DiscoveryService]: _buildPeer[basic] - end
+2022-04-18T11:27:38.568Z - debug: [DiscoveryService]: _processMembership[basic] - found org:Org2MSP
+2022-04-18T11:27:38.568Z - debug: [DiscoveryService]: _processPeers[basic] - peer :peer0.org2.example.com:9051
+2022-04-18T11:27:38.568Z - debug: [DiscoveryService]: _processPeers[basic] - ledgerHeight :6
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _buildPeer[basic] - start
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.569Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.569Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.569Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.569Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.569Z - debug: [DiscoveryService]: _buildPeer[basic] - url: grpcs://localhost:9051 - already added to this channel
+2022-04-18T11:27:38.569Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - start - connected:true
+2022-04-18T11:27:38.569Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.570Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.570Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:27:38.570Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - end - connected:true
+2022-04-18T11:27:38.570Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode basic to peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.570Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode found on this endorser discovered chaincodes - basic
+2022-04-18T11:27:38.570Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode already exist on this endorser - basic
+2022-04-18T11:27:38.570Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode _lifecycle to peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.570Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode found on this endorser discovered chaincodes - _lifecycle
+2022-04-18T11:27:38.570Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode already exist on this endorser - _lifecycle
+2022-04-18T11:27:38.570Z - debug: [DiscoveryService]: _buildPeer[basic] - end
+2022-04-18T11:27:38.570Z - debug: [DiscoveryService]: send[basic] - completed processing result 1
+2022-04-18T11:27:38.571Z - debug: [DiscoveryService]: send[basic] - process result index:2
+2022-04-18T11:27:38.571Z - debug: [DiscoveryService]: send[basic] - process result - have ccQueryRes in 2
+2022-04-18T11:27:38.571Z - debug: [DiscoveryService]: _processChaincode - start
+2022-04-18T11:27:38.571Z - debug: [DiscoveryService]: _processChaincode - found group: G0
+2022-04-18T11:27:38.571Z - debug: [DiscoveryService]: _processPeers[basic] - peer :peer0.org1.example.com:7051
+2022-04-18T11:27:38.572Z - debug: [DiscoveryService]: _processPeers[basic] - ledgerHeight :6
+2022-04-18T11:27:38.572Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:27:38.572Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:27:38.572Z - debug: [DiscoveryService]: _buildPeer[basic] - start
+2022-04-18T11:27:38.572Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.573Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.573Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.573Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.573Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.573Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.573Z - debug: [DiscoveryService]: _buildPeer[basic] - url: grpcs://localhost:7051 - already added to this channel
+2022-04-18T11:27:38.573Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - start - connected:true
+2022-04-18T11:27:38.573Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.573Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.574Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:27:38.574Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - end - connected:true
+2022-04-18T11:27:38.574Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode basic to peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.574Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode found on this endorser discovered chaincodes - basic
+2022-04-18T11:27:38.574Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode already exist on this endorser - basic
+2022-04-18T11:27:38.574Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode _lifecycle to peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.574Z - debug: [Endorser]: hasChaincode[peer0.org1.example.com:7051] - chaincode found on this endorser discovered chaincodes - _lifecycle
+2022-04-18T11:27:38.574Z - debug: [Endorser]: addChaincode[peer0.org1.example.com:7051] - chaincode already exist on this endorser - _lifecycle
+2022-04-18T11:27:38.574Z - debug: [DiscoveryService]: _buildPeer[basic] - end
+2022-04-18T11:27:38.574Z - debug: [DiscoveryService]: _processChaincode - found group: G1
+2022-04-18T11:27:38.575Z - debug: [DiscoveryService]: _processPeers[basic] - peer :peer0.org2.example.com:9051
+2022-04-18T11:27:38.575Z - debug: [DiscoveryService]: _processPeers[basic] - ledgerHeight :6
+2022-04-18T11:27:38.575Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"basic","version":"1"}
+2022-04-18T11:27:38.575Z - debug: [DiscoveryService]: _processPeers[basic] - chaincode :{"name":"_lifecycle","version":"1"}
+2022-04-18T11:27:38.575Z - debug: [DiscoveryService]: _buildPeer[basic] - start
+2022-04-18T11:27:38.576Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.576Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.576Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.576Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.576Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.576Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org1.example.com:7051
+2022-04-18T11:27:38.576Z - debug: [DiscoveryService]: _buildPeer[basic] - checking channel peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.576Z - debug: [DiscoveryService]: _buildPeer[basic] - url: grpcs://localhost:9051 - already added to this channel
+2022-04-18T11:27:38.576Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - start - connected:true
+2022-04-18T11:27:38.576Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.577Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.577Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:27:38.577Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - end - connected:true
+2022-04-18T11:27:38.577Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode basic to peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.577Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode found on this endorser discovered chaincodes - basic
+2022-04-18T11:27:38.577Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode already exist on this endorser - basic
+2022-04-18T11:27:38.577Z - debug: [DiscoveryService]: _buildPeer[basic] - adding chaincode _lifecycle to peer peer0.org2.example.com:9051
+2022-04-18T11:27:38.577Z - debug: [Endorser]: hasChaincode[peer0.org2.example.com:9051] - chaincode found on this endorser discovered chaincodes - _lifecycle
+2022-04-18T11:27:38.577Z - debug: [Endorser]: addChaincode[peer0.org2.example.com:9051] - chaincode already exist on this endorser - _lifecycle
+2022-04-18T11:27:38.577Z - debug: [DiscoveryService]: _buildPeer[basic] - end
+2022-04-18T11:27:38.577Z - debug: [DiscoveryService]: _processChaincode - layout :[object Object]
+2022-04-18T11:27:38.577Z - debug: [DiscoveryService]: send[basic] - completed processing result 2
+2022-04-18T11:27:38.578Z - debug: [Contract]: getDiscoveryHandler[basic] - endorsement plan retrieved
+2022-04-18T11:27:38.578Z - debug: [DiscoveryService]: hasDiscoveryResults[basic] - start
+2022-04-18T11:27:38.578Z - debug: [Contract]: notifyDiscoveryResultsListeners[basic] - start
+2022-04-18T11:27:38.578Z - debug: [Contract]: getDiscoveryHandler[basic] - completed discovery results as first one
+2022-04-18T11:27:38.578Z - debug: [Contract]: getDiscoveryHandler[basic] - returning a new discovery service handler
+2022-04-18T11:27:38.578Z - debug: [DiscoveryService]: newHandler[basic] - start
+2022-04-18T11:27:38.578Z - debug: [DiscoveryHandler]: DiscoveryHandler.constructor - start
+2022-04-18T11:27:38.578Z - debug: [ServiceHandler]: ServiceHandler.constructor - start 
+2022-04-18T11:27:38.579Z - debug: [Proposal]: send[basic] - start
+2022-04-18T11:27:38.579Z - debug: [Proposal]: send[basic] - requestTimeout 30000
+2022-04-18T11:27:38.579Z - debug: [ServiceAction]: getSignedProposal[Endorsement:basic] - start
+2022-04-18T11:27:38.580Z - debug: [Proposal]: send[basic] - endorsing with a handler
+2022-04-18T11:27:38.580Z - debug: [DiscoveryHandler]: endorse - start
+2022-04-18T11:27:38.580Z - debug: [DiscoveryService]: getDiscoveryResults[basic] - start
+2022-04-18T11:27:38.580Z - debug: [DiscoveryService]: getDiscoveryResults[basic] - not refreshing
+2022-04-18T11:27:38.581Z - debug: [DiscoveryHandler]: _endorse - starting
+2022-04-18T11:27:38.581Z - debug: [DiscoveryHandler]: _modify_groups - start
+2022-04-18T11:27:38.581Z - debug: [DiscoveryHandler]: _modify_groups - required:{}
+2022-04-18T11:27:38.581Z - debug: [DiscoveryHandler]: _modify_groups - preferred:{}
+2022-04-18T11:27:38.581Z - debug: [DiscoveryHandler]: _modify_groups - ignored:{}
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - required_orgs:{}
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - preferred_orgs:{}
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - ignored_orgs:{}
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - preferred_height_gap:1
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - sort: ledgerHeight
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _modify_groups - endorsement_plan:{"chaincode":"basic","groups":{"G0":{"peers":[{"mspid":"Org1MSP","endpoint":"peer0.org1.example.com:7051","name":"peer0.org1.example.com:7051","ledgerHeight":{"low":6,"high":0,"unsigned":true},"chaincodes":[{"name":"basic","version":"1"},{"name":"_lifecycle","version":"1"}]}]},"G1":{"peers":[{"mspid":"Org2MSP","endpoint":"peer0.org2.example.com:9051","name":"peer0.org2.example.com:9051","ledgerHeight":{"low":6,"high":0,"unsigned":true},"chaincodes":[{"name":"basic","version":"1"},{"name":"_lifecycle","version":"1"}]}]}},"layouts":[{"G0":1,"G1":1}],"endorsements":{}}
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _removePeers - start
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _sortList - start - ledgerHeight
+2022-04-18T11:27:38.582Z - debug: [DiscoveryHandler]: _splitList - start
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer peer0.org1.example.com:7051 not found on the preferred peer list
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer peer0.org1.example.com:7051 not found on preferred org list
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - checking preferred gap of 1
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer.ledgerHeight 6
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - gap is OK, peer should be on priority list peer0.org1.example.com:7051
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _removePeers - start
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _sortList - start - ledgerHeight
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - start
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer peer0.org2.example.com:9051 not found on the preferred peer list
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer peer0.org2.example.com:9051 not found on preferred org list
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - checking preferred gap of 1
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - peer.ledgerHeight 6
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _splitList - gap is OK, peer should be on priority list peer0.org2.example.com:9051
+2022-04-18T11:27:38.583Z - debug: [DiscoveryHandler]: _modify_groups - updated endorsement_plan:{"chaincode":"basic","groups":{"G0":{"peers":[{"mspid":"Org1MSP","endpoint":"peer0.org1.example.com:7051","name":"peer0.org1.example.com:7051","ledgerHeight":{"low":6,"high":0,"unsigned":false},"chaincodes":[{"name":"basic","version":"1"},{"name":"_lifecycle","version":"1"}]}]},"G1":{"peers":[{"mspid":"Org2MSP","endpoint":"peer0.org2.example.com:9051","name":"peer0.org2.example.com:9051","ledgerHeight":{"low":6,"high":0,"unsigned":false},"chaincodes":[{"name":"basic","version":"1"},{"name":"_lifecycle","version":"1"}]}]}},"layouts":[{"G0":1,"G1":1}],"endorsements":{}}
+2022-04-18T11:27:38.584Z - debug: [DiscoveryHandler]: _endorse - starting layout plan 0
+2022-04-18T11:27:38.584Z - debug: [DiscoveryHandler]: _endorse_layout - start
+2022-04-18T11:27:38.584Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G0:0 - start
+2022-04-18T11:27:38.584Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.584Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.584Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.584Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.585Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.585Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G0:0 - send endorsement to peer0.org1.example.com:7051
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - start - connected:true
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.585Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G1:1 - start
+2022-04-18T11:27:38.585Z - debug: [DiscoveryService]: _buildUrl[basic] - start
+2022-04-18T11:27:38.585Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.585Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.585Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.585Z - debug: [Channel]: _getServiceEndpoints - Endorser added peer0.org2.example.com:9051 connected: true
+2022-04-18T11:27:38.585Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G1:1 - send endorsement to peer0.org2.example.com:9051
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - start - connected:true
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: waitForReady - start Endorser-peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.585Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org2.example.com:9051 - grpcs://localhost:9051
+2022-04-18T11:27:38.585Z - debug: [DiscoveryHandler]: _execute_endorsements - start
+2022-04-18T11:27:38.586Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:27:38.586Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org1.example.com:7051] - end - connected:true
+2022-04-18T11:27:38.586Z - debug: [Endorser]: sendProposal[peer0.org1.example.com:7051] - start -- peer0.org1.example.com:7051 grpcs://localhost:7051 timeout:30000
+2022-04-18T11:27:38.587Z - debug: [Endorser]: sendProposal[peer0.org1.example.com:7051] - running promise
+2022-04-18T11:27:38.590Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org2.example.com:9051 url:grpcs://localhost:9051
+2022-04-18T11:27:38.590Z - debug: [ServiceEndpoint]: checkConnection[Endorser-peer0.org2.example.com:9051] - end - connected:true
+2022-04-18T11:27:38.590Z - debug: [Endorser]: sendProposal[peer0.org2.example.com:9051] - start -- peer0.org2.example.com:9051 grpcs://localhost:9051 timeout:30000
+2022-04-18T11:27:38.590Z - debug: [Endorser]: sendProposal[peer0.org2.example.com:9051] - running promise
+2022-04-18T11:27:38.652Z - debug: [Endorser]: sendProposal[peer0.org1.example.com:7051] - Received proposal response from peer "grpcs://localhost:7051": status - 200
+2022-04-18T11:27:38.652Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G0:0 - endorsement completed to peer0.org1.example.com:7051
+2022-04-18T11:27:38.652Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G0:0 - peer peer0.org1.example.com:7051 endorsement will be used
+2022-04-18T11:27:38.652Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G0:0 - returning endorsement
+2022-04-18T11:27:38.653Z - debug: [Endorser]: sendProposal[peer0.org2.example.com:9051] - Received proposal response from peer "grpcs://localhost:9051": status - 200
+2022-04-18T11:27:38.653Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G1:1 - endorsement completed to peer0.org2.example.com:9051
+2022-04-18T11:27:38.654Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G1:1 - peer peer0.org2.example.com:9051 endorsement will be used
+2022-04-18T11:27:38.654Z - debug: [DiscoveryHandler]: _build_endorse_group_member >> G1:1 - returning endorsement
+2022-04-18T11:27:38.654Z - debug: [DiscoveryHandler]: _execute_endorsements - endorsement is complete
+2022-04-18T11:27:38.654Z - debug: [DiscoveryHandler]: _execute_endorsements - endorsement is complete
+2022-04-18T11:27:38.654Z - debug: [DiscoveryHandler]: compareProposalResponseResults[undefined] - start
+2022-04-18T11:27:38.655Z - debug: [DiscoveryHandler]: compareProposalResponseResults[undefined] - read/writes result sets match index=1
+2022-04-18T11:27:38.655Z - debug: [DiscoveryHandler]: _endorse - layout plan 0 completed successfully
+2022-04-18T11:27:38.655Z - debug: [Proposal]: send[basic] - have results from handler
+2022-04-18T11:27:38.655Z - debug: [Proposal]: send[basic] - result is endorsed
+2022-04-18T11:27:38.656Z - debug: [Proposal]: send[basic] - result is endorsed
+2022-04-18T11:27:38.656Z - debug: [Proposal]: getTransactionId[basic] - start
+2022-04-18T11:27:38.656Z - debug: [Channel]: getEndorsers[mychannel] - start
+2022-04-18T11:27:38.656Z - debug: [Channel]: _getServiceEndpoints - start - Org1MSP
+2022-04-18T11:27:38.656Z - debug: [Channel]: _getServiceEndpoints - Endorser mspid matched, added peer0.org1.example.com:7051 connected: true
+2022-04-18T11:27:38.656Z - debug: [Channel]: _getServiceEndpoints - Endorser mspid not matched, not added peer0.org2.example.com:9051 - Org2MSP
+2022-04-18T11:27:38.657Z - debug: [TransactionEventHandler]: constructor: transactionId = 4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961, options = {"commitTimeout":300,"endorseTimeout":30}
+2022-04-18T11:27:38.657Z - debug: [TransactionEventHandler]: startListening - have eventService list - start monitoring
+2022-04-18T11:27:38.657Z - debug: [TransactionEventHandler]: setListenTimeout setTimeout(300) in seconds for transaction 4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+2022-04-18T11:27:38.657Z - debug: [TransactionEventHandler]: setListenTimeout - end
+2022-04-18T11:27:38.658Z - debug: [Channel]: newEventService[mychannel] - start
+2022-04-18T11:27:38.658Z - debug: [EventService]: EventService.constructor[peer0.org1.example.com:7051] - start 
+2022-04-18T11:27:38.658Z - debug: [ServiceAction]: ServiceAction.constructor - start [peer0.org1.example.com:7051]
+2022-04-18T11:27:38.659Z - debug: [Client]: newEventer: gateway client start name:peer0.org1.example.com:7051
+2022-04-18T11:27:38.659Z - debug: [Eventer]: Eventer.constructor[peer0.org1.example.com:7051] - start 
+2022-04-18T11:27:38.659Z - debug: [Client]: newEventer: gateway client return new Eventer name:peer0.org1.example.com:7051
+2022-04-18T11:27:38.659Z - debug: [ServiceEndpoint]: setEndpoint[Eventer-peer0.org1.example.com:7051] - start 
+2022-04-18T11:27:38.659Z - debug: [ServiceEndpoint]: setEndpoint[Eventer-peer0.org1.example.com:7051] - endpoint has been set for peer0.org1.example.com:7051-grpcs://localhost:7051
+2022-04-18T11:27:38.660Z - debug: [EventService]: setTargets[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.660Z - debug: [ServiceEndpoint]: isConnectable[Eventer-peer0.org1.example.com:7051] - start 
+2022-04-18T11:27:38.660Z - debug: [ServiceEndpoint]: isConnectable[Eventer-peer0.org1.example.com:7051] - this service endpoint has been assigned an endpoint, connect may be run
+2022-04-18T11:27:38.660Z - debug: [EventService]: setTargets[peer0.org1.example.com:7051] - #1 - target is connectable peer0.org1.example.com:7051
+2022-04-18T11:27:38.660Z - debug: [EventSourceManager]: startEventService - start mychannel
+2022-04-18T11:27:38.660Z - debug: [EventService]: isStarted[peer0.org1.example.com:7051]  - #1 - false
+2022-04-18T11:27:38.660Z - debug: [EventService]: isInUse[peer0.org1.example.com:7051]  - #1 inUse - false
+2022-04-18T11:27:38.661Z - debug: [EventService]: build[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.661Z - debug: [IdentityContext]: calculateTransactionId - start
+2022-04-18T11:27:38.661Z - debug: [IdentityContext]: calculateTransactionId - nonce:1be1b8bb1bd1045f0954d352f83e7d47f664091c61f9a349
+2022-04-18T11:27:38.661Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:27:38.661Z - debug: [IdentityContext]: calculateTransactionId - txid:ec3f7478dabbb646645626a19cd97ca4ebc752fc6cf31fdea1a956a2e5377258
+2022-04-18T11:27:38.662Z - debug: [Channel]: buildChannelHeader[mychannel] - start - type 5 chaincode_id  tx_id ec3f7478dabbb646645626a19cd97ca4ebc752fc6cf31fdea1a956a2e5377258
+2022-04-18T11:27:38.662Z - debug: [Channel]: buildChannelHeader[mychannel] - chaincodeID {"name":""}
+2022-04-18T11:27:38.662Z - debug: [Channel]: buildChannelHeader[mychannel] - ChaincodeHeaderExtension {"type":"Buffer","data":[18,2,18,0]}
+2022-04-18T11:27:38.662Z - debug: [Channel]: buildCurrentTimestamp[undefined] - start
+2022-04-18T11:27:38.663Z - debug: [Channel]: buildCurrentTimestamp[undefined] - seconds 1650281258 nanos 663000000
+2022-04-18T11:27:38.663Z - debug: [Client]: getClientCertHash: gateway client - start
+2022-04-18T11:27:38.663Z - debug: [ServiceAction]: buildHeader - start
+2022-04-18T11:27:38.663Z - debug: [IdentityContext]: serializeIdentity - start
+2022-04-18T11:27:38.664Z - debug: [EventService]: build[peer0.org1.example.com:7051] - #1 - end
+2022-04-18T11:27:38.664Z - debug: [ServiceAction]: sign[EventService:peer0.org1.example.com:7051] - start
+2022-04-18T11:27:38.664Z - debug: [IdentityContext]: sign - start
+2022-04-18T11:27:38.669Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[58184834, 16107175, 46337110, 61984594, 41306496, 52188987, 22464358, 41479992, 27964490, 2292973, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[22463144, 21405638, 59219749, 56124699, 46662188, 13854922, 29923337, 49613844, 32624488, 1873293, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, recoveryParam=0
+2022-04-18T11:27:38.670Z - debug: [IdentityContext]: sign - end
+2022-04-18T11:27:38.670Z - debug: [ServiceAction]: sign[EventService:peer0.org1.example.com:7051] - end
+2022-04-18T11:27:38.670Z - debug: [EventService]: send[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.670Z - debug: [EventService]: send[peer0.org1.example.com:7051] - #1 - using preassigned targets
+2022-04-18T11:27:38.670Z - debug: [ServiceAction]: getSignedEnvelope[EventService:peer0.org1.example.com:7051] - start
+2022-04-18T11:27:38.670Z - debug: [Eventer]: checkConnection[Eventer-peer0.org1.example.com:7051] - start - connected:false
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: isConnectable[Eventer-peer0.org1.example.com:7051] - start 
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: isConnectable[Eventer-peer0.org1.example.com:7051] - this service endpoint has been assigned an endpoint, connect may be run
+2022-04-18T11:27:38.671Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - start on Eventer
+2022-04-18T11:27:38.671Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - no stream to close
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: disconnect[Eventer-peer0.org1.example.com:7051] - start on ServiceEndpoint
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: disconnect[Eventer-peer0.org1.example.com:7051] - end on ServiceEndpoint
+2022-04-18T11:27:38.671Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - end on Eventer
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: resetConnection[Eventer-peer0.org1.example.com:7051] - start - connected:false
+2022-04-18T11:27:38.671Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - start on Eventer
+2022-04-18T11:27:38.671Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - no stream to close
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: disconnect[Eventer-peer0.org1.example.com:7051] - start on ServiceEndpoint
+2022-04-18T11:27:38.671Z - debug: [ServiceEndpoint]: disconnect[Eventer-peer0.org1.example.com:7051] - end on ServiceEndpoint
+2022-04-18T11:27:38.672Z - debug: [Eventer]: disconnect[peer0.org1.example.com:7051:1] - end on Eventer
+2022-04-18T11:27:38.672Z - debug: [ServiceEndpoint]: resetConnection[Eventer-peer0.org1.example.com:7051] - create the grpc service for peer0.org1.example.com:7051
+2022-04-18T11:27:38.673Z - debug: [ServiceEndpoint]: waitForReady - start Eventer-peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.673Z - debug: [ServiceEndpoint]: waitForReady - promise running peer0.org1.example.com:7051 - grpcs://localhost:7051
+2022-04-18T11:27:38.679Z - debug: [ServiceEndpoint]: waitForReady - Successfully connected to remote gRPC server peer0.org1.example.com:7051 url:grpcs://localhost:7051
+2022-04-18T11:27:38.679Z - debug: [ServiceEndpoint]: resetConnection[Eventer-peer0.org1.example.com:7051] - end - connected:true
+2022-04-18T11:27:38.680Z - debug: [Eventer]: checkConnection[Eventer-peer0.org1.example.com:7051] - end - connected:true
+2022-04-18T11:27:38.681Z - debug: [EventService]: _startService[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.682Z - debug: [EventService]: _startService[peer0.org1.example.com:7051] - #1 - setup timer 3000
+2022-04-18T11:27:38.682Z - debug: [EventService]: _startService[peer0.org1.example.com:7051] - #1 - create stream setup timeout
+2022-04-18T11:27:38.684Z - debug: [EventService]: _startService[peer0.org1.example.com:7051] - #1 - created stream % based on blockType 1 filtered
+2022-04-18T11:27:38.685Z - debug: [EventService]: _startService[peer0.org1.example.com:7051] - #1 - stream write complete
+2022-04-18T11:27:38.699Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- peer:grpcs://localhost:7051 - stream:1
+2022-04-18T11:27:38.699Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- resolve the promise
+2022-04-18T11:27:38.699Z - debug: [BlockDecoder.js]: decodeFilteredBlock - start {"filtered_transactions":[{"txid":"adc63f5c2b4588ec840211ac1d969b35bb76a0e5f5e094ac2ec25a4dab69609a","type":3,"tx_validation_code":0,"transaction_actions":{"chaincode_actions":[]},"Data":"transaction_actions"}],"channel_id":"mychannel","number":{"low":5,"high":0,"unsigned":true}}
+2022-04-18T11:27:38.699Z - debug: [BlockDecoder.js]: decodeFilteredTransactions - [{"txid":"adc63f5c2b4588ec840211ac1d969b35bb76a0e5f5e094ac2ec25a4dab69609a","type":3,"tx_validation_code":0,"transaction_actions":{"chaincode_actions":[]},"Data":"transaction_actions"}]
+2022-04-18T11:27:38.700Z - debug: [BlockDecoder.js]: decodeFilteredBlock - end
+2022-04-18T11:27:38.700Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- have filtered block data
+2022-04-18T11:27:38.700Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- incoming block number 5
+2022-04-18T11:27:38.701Z - debug: [EventService]: _processBlockEvents[peer0.org1.example.com:7051] - #1 - start - filtered
+2022-04-18T11:27:38.701Z - debug: [EventService]: _processBlockEvents[peer0.org1.example.com:7051] - #1 - no block listeners
+2022-04-18T11:27:38.701Z - debug: [EventService]: _processTxEvents[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.701Z - debug: [EventService]: _processTxEvents[peer0.org1.example.com:7051] - #1 - no tx listeners
+2022-04-18T11:27:38.701Z - debug: [EventService]: _processChaincodeEvents[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.702Z - debug: [EventService]: _processChaincodeEvents[peer0.org1.example.com:7051] - #1 - no registered chaincode event "listeners"
+2022-04-18T11:27:38.702Z - debug: [EventService]: _processEndBlock[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:38.702Z - debug: [EventService]: _processEndBlock[peer0.org1.example.com:7051] - #1 - end
+2022-04-18T11:27:38.702Z - debug: [EventService]: send[peer0.org1.example.com:7051] - #1 - set current eventer Eventer- name: peer0.org1.example.com:7051, url:grpcs://localhost:7051, connected:true, connectAttempted:true
+2022-04-18T11:27:38.702Z - debug: [EventService]: send[peer0.org1.example.com:7051] - #1 - end
+2022-04-18T11:27:38.702Z - debug: [EventService]: registerTransactionListener[peer0.org1.example.com:7051] - #1 start - txid:4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+2022-04-18T11:27:38.703Z - debug: [Endorsement]: newCommit[basic] - start
+2022-04-18T11:27:38.703Z - debug: [ServiceAction]: ServiceAction.constructor - start [basic]
+2022-04-18T11:27:38.703Z - debug: [Proposal]: Proposal.constructor[basic] - start 
+2022-04-18T11:27:38.703Z - debug: [Commit]: constructor[basic] - start
+2022-04-18T11:27:38.703Z - debug: [Commit]: build[basic] - start - appUser
+2022-04-18T11:27:38.703Z - debug: [Commit]: build[basic] - proposalResponse endorsement added to commit:
+2022-04-18T11:27:38.704Z - debug: [Commit]: build[basic] - proposalResponse endorsement added to commit:
+2022-04-18T11:27:38.704Z - debug: [Commit]: build[basic] - end - appUser
+2022-04-18T11:27:38.705Z - debug: [ServiceAction]: sign[Commit:basic] - start
+2022-04-18T11:27:38.705Z - debug: [IdentityContext]: sign - start
+2022-04-18T11:27:38.709Z - debug: [crypto_ecdsa_aes]: ecdsa signature:  negative=0, words=[62551561, 25771907, 20512726, 18418322, 440476, 39263059, 23696439, 67094637, 47719869, 903079, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], length=10, red=null, negative=0, words=[50218220, 4275750, 21884095, 34235036, 29868184, 4079395, 46048084, 27144326, 19827975, 1096624], length=10, red=null, recoveryParam=0
+2022-04-18T11:27:38.710Z - debug: [IdentityContext]: sign - end
+2022-04-18T11:27:38.710Z - debug: [ServiceAction]: sign[Commit:basic] - end
+2022-04-18T11:27:38.710Z - debug: [Transaction]: submit[CreateAsset] - use discovery to commit
+2022-04-18T11:27:38.710Z - debug: [Commit]: send[basic] - start
+2022-04-18T11:27:38.710Z - debug: [ServiceAction]: getSignedEnvelope[Commit:basic] - start
+2022-04-18T11:27:38.710Z - debug: [Commit]: send[basic] - calling the handler
+2022-04-18T11:27:38.711Z - debug: [DiscoveryHandler]: commit - start
+2022-04-18T11:27:38.711Z - debug: [DiscoveryService]: getDiscoveryResults[basic] - start
+2022-04-18T11:27:38.711Z - debug: [DiscoveryService]: getDiscoveryResults[basic] - not refreshing
+2022-04-18T11:27:38.711Z - debug: [Channel]: getCommitters[mychannel] - start
+2022-04-18T11:27:38.711Z - debug: [Channel]: _getServiceEndpoints - start - undefined
+2022-04-18T11:27:38.711Z - debug: [Channel]: _getServiceEndpoints - Committer added orderer.example.com:7050 connected: true
+2022-04-18T11:27:38.711Z - debug: [DiscoveryHandler]: commit - found 1 committers assigned to channel
+2022-04-18T11:27:38.712Z - debug: [DiscoveryHandler]: commit - start
+2022-04-18T11:27:38.712Z - debug: [DiscoveryHandler]: commit - sending to committer orderer.example.com:7050
+2022-04-18T11:27:38.712Z - debug: [ServiceEndpoint]: checkConnection[Committer-orderer.example.com:7050] - start - connected:true
+2022-04-18T11:27:38.712Z - debug: [ServiceEndpoint]: checkConnection[Committer-orderer.example.com:7050] - end - connected:true
+2022-04-18T11:27:38.712Z - debug: [Committer]: sendBroadcast - start
+2022-04-18T11:27:38.713Z - debug: [Committer]: sendBroadcast - sent message
+2022-04-18T11:27:38.720Z - debug: [Committer]: sendBroadcast - on data response: {"status":200,"info":""}
+2022-04-18T11:27:38.720Z - debug: [Committer]: sendBroadcast - response status 200
+2022-04-18T11:27:38.720Z - debug: [Committer]: sendBroadcast - on data response: {"status":"SUCCESS","info":""}
+2022-04-18T11:27:38.721Z - debug: [DiscoveryHandler]: commit - Successfully sent transaction to the committer orderer.example.com:7050
+2022-04-18T11:27:38.721Z - debug: [DiscoveryHandler]: commit - return commit status { status: 'SUCCESS', info: '' } 
+2022-04-18T11:27:38.721Z - debug: [Transaction]: submit[CreateAsset] - commit response {"status":"SUCCESS","info":""}
+2022-04-18T11:27:38.721Z - debug: [Transaction]: submit[CreateAsset] - successful commit
+2022-04-18T11:27:38.721Z - debug: [Transaction]: submit[CreateAsset] - wait for the transaction to be committed on the peer
+2022-04-18T11:27:38.721Z - debug: [TransactionEventHandler]: waitForEvents start
+2022-04-18T11:27:38.722Z - debug: [Committer]: sendBroadcast - on end:
+2022-04-18T11:27:40.746Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- peer:grpcs://localhost:7051 - stream:1
+2022-04-18T11:27:40.746Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- resolve the promise
+2022-04-18T11:27:40.747Z - debug: [BlockDecoder.js]: decodeFilteredBlock - start {"filtered_transactions":[{"txid":"4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961","type":3,"tx_validation_code":0,"transaction_actions":{"chaincode_actions":[]},"Data":"transaction_actions"}],"channel_id":"mychannel","number":{"low":6,"high":0,"unsigned":true}}
+2022-04-18T11:27:40.747Z - debug: [BlockDecoder.js]: decodeFilteredTransactions - [{"txid":"4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961","type":3,"tx_validation_code":0,"transaction_actions":{"chaincode_actions":[]},"Data":"transaction_actions"}]
+2022-04-18T11:27:40.747Z - debug: [BlockDecoder.js]: decodeFilteredBlock - end
+2022-04-18T11:27:40.747Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- have filtered block data
+2022-04-18T11:27:40.747Z - debug: [EventService]: on.data [peer0.org1.example.com:7051] - #1- incoming block number 6
+2022-04-18T11:27:40.747Z - debug: [EventService]: _processBlockEvents[peer0.org1.example.com:7051] - #1 - start - filtered
+2022-04-18T11:27:40.747Z - debug: [EventService]: _processBlockEvents[peer0.org1.example.com:7051] - #1 - no block listeners
+2022-04-18T11:27:40.748Z - debug: [EventService]: _processTxEvents[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:40.748Z - debug: [EventService]: _processTxEvents[peer0.org1.example.com:7051] - #1 filtered block number=6
+2022-04-18T11:27:40.748Z - debug: [EventService]: _processTxEvents[peer0.org1.example.com:7051] - #1 filtered filtered_transactions=[{"txid":"4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961","type":3,"typeString":"ENDORSER_TRANSACTION","tx_validation_code":0,"transaction_actions":{"chaincode_actions":[]}}]
+2022-04-18T11:27:40.748Z - debug: [EventService]: _callTransactionListener[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:40.748Z - debug: [EventService]: _callTransactionListener[peer0.org1.example.com:7051] - #1 - about to call the transaction call back with code=0 tx=4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+2022-04-18T11:27:40.749Z - debug: [EventService]: convertValidationCode - status VALID
+2022-04-18T11:27:40.749Z - debug: [AllForTxStrategy]: checkCompletion:{"success":1,"fail":0,"expected":1}
+2022-04-18T11:27:40.749Z - debug: [AllForTxStrategy]: checkCompletion - success
+2022-04-18T11:27:40.750Z - debug: [TransactionEventHandler]: strategySuccess: commit success for transaction "4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961"
+2022-04-18T11:27:40.750Z - debug: [TransactionEventHandler]: cancelListening called
+2022-04-18T11:27:40.750Z - debug: [EventService]: unregisterEventListener[peer0.org1.example.com:7051] - #1 - start - eventListener:EventListener: { listenerType: tx, startBlock: null, endBlock: null, unregister: false, event: 4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961}
+2022-04-18T11:27:40.750Z - debug: [EventService]: unregisterEventListener[peer0.org1.example.com:7051] - #1 - end
+2022-04-18T11:27:40.750Z - debug: [EventService]: _processChaincodeEvents[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:40.750Z - debug: [EventService]: _processChaincodeEvents[peer0.org1.example.com:7051] - #1 - no registered chaincode event "listeners"
+2022-04-18T11:27:40.751Z - debug: [EventService]: _processEndBlock[peer0.org1.example.com:7051] - #1 - start
+2022-04-18T11:27:40.751Z - debug: [EventService]: _processEndBlock[peer0.org1.example.com:7051] - #1 - end
+2022-04-18T11:27:40.751Z - debug: [TransactionEventHandler]: waitForEvents end
+txid 4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961
+*** Asset Created Successfully: committed
+*** Result: {
+  "ID": "4000",
+  "ItemName": "Grapes",
+  "Quantity": "18",
+  "Owner": "real",
+  "Price": "1200",
+  "Location": "delhi",
+  "FoodQuality": "Rotten Banana"
+}
+Result <Buffer 7b 22 49 44 22 3a 22 34 30 30 30 22 2c 22 49 74 65 6d 4e 61 6d 65 22 3a 22 47 72 61 70 65 73 22 2c 22 51 75 61 6e 74 69 74 79 22 3a 22 31 38 22 2c 22 ... 78 more bytes>
+Create Txn Transaction {
+  name: 'CreateAsset',
+  contract: ContractImpl {
+    contractListeners: Map(0) {},
+    discoveryResultsListeners: [],
+    network: NetworkImpl {
+      contracts: [Map],
+      initialized: true,
+      commitListeners: Map(0) {},
+      blockListeners: Map(0) {},
+      gateway: [Gateway],
+      channel: [Channel],
+      eventServiceManager: [EventServiceManager],
+      realtimeFilteredBlockEventSource: [BlockEventSource],
+      realtimeFullBlockEventSource: [BlockEventSource],
+      realtimePrivateBlockEventSource: [BlockEventSource],
+      discoveryService: [DiscoveryService],
+      queryHandler: [SingleQueryHandler]
+    },
+    chaincodeId: 'basic',
+    gateway: Gateway {
+      networks: [Map],
+      options: [Object],
+      client: [Client],
+      identity: [Object],
+      identityContext: [IdentityContext]
+    },
+    namespace: '',
+    discoveryInterests: [ [Object] ],
+    discoveryService: DiscoveryService {
+      type: 'DiscoveryService',
+      name: 'basic',
+      channel: [Channel],
+      client: [Client],
+      refreshAge: undefined,
+      discoveryResults: [Object],
+      asLocalhost: true,
+      currentTarget: [Discoverer],
+      targets: [Array],
+      _action: [Object],
+      _payload: <Buffer 0a d5 07 0a b0 07 0a 07 4f 72 67 31 4d 53 50 12 a4 07 2d 2d 2d 2d 2d 42 45 47 49 4e 20 43 45 52 54 49 46 49 43 41 54 45 2d 2d 2d 2d 2d 0a 4d 49 49 43 ... 990 more bytes>,
+      _signature: <Buffer 30 44 02 20 10 89 c3 fd 4a 3c e9 ed a5 31 32 51 32 0f 18 71 36 fa a6 bd 0f be 48 05 3d c3 67 64 9e 31 a0 9e 02 20 3e 58 ad 00 bb c4 89 93 31 f6 64 3d ... 20 more bytes>,
+      requestTimeout: undefined
+    }
+  },
+  gatewayOptions: {
+    queryHandlerOptions: { timeout: 30, strategy: [Function: PREFER_MSPID_SCOPE_SINGLE] },
+    eventHandlerOptions: {
+      endorseTimeout: 30,
+      commitTimeout: 300,
+      strategy: [Function: PREFER_MSPID_SCOPE_ALLFORTX]
+    },
+    discovery: { enabled: true, asLocalhost: true },
+    wallet: Wallet {
+      providerRegistry: [IdentityProviderRegistry],
+      store: [FileSystemWalletStore]
+    },
+    identity: 'appUser'
+  },
+  eventHandlerStrategyFactory: [Function: PREFER_MSPID_SCOPE_ALLFORTX],
+  queryHandler: SingleQueryHandler { currentPeerIndex: 0, peers: [ [Endorser] ] },
+  identityContext: IdentityContext {
+    type: 'IdentityContext',
+    client: Client {
+      type: 'Client',
+      name: 'gateway client',
+      mspid: null,
+      _tls_mutual: [Object],
+      endorsers: [Map],
+      committers: Map(0) {},
+      channels: [Map],
+      centralizedOptions: null
+    },
+    user: User {
+      type: 'User',
+      _name: 'appUser',
+      _roles: null,
+      _affiliation: '',
+      _enrollmentSecret: '',
+      _identity: [Identity],
+      _signingIdentity: [SigningIdentity],
+      _mspId: 'Org1MSP',
+      _cryptoSuite: [CryptoSuite_ECDSA_AES]
+    },
+    name: 'appUser',
+    mspid: 'Org1MSP',
+    transactionId: '4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961',
+    nonce: <Buffer ce d9 6b a1 1d b3 ef 88 53 94 8e 8e f3 cb e2 04 74 88 ca 46 9b da 99 9a>
+  }
+}
+inside create()  {
+  BlockChain_TransactionType: 'Create',
+  AssetId: '4000',
+  AssetName: 'Grapes',
+  Quantity: '18',
+  Owner: 'real',
+  Price: '1200',
+  location: 'delhi',
+  FoodQuality: 'Rotten Banana',
+  UserName: 'ak',
+  id: 3508,
+  BlockChain_TransactionId: '4f5609d95874dd7e50e156079687a06806b3aef9df738c4517a12beccca79961',
+  BlockChain_dateCreated: '18/4/2022, 4:57:40 pm'
+}
+Data published to kramis
+       
+
+
