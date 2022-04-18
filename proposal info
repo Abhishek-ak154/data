@@ -1,0 +1,25 @@
+Submit blockchain txn
+Proposal Info **********  {
+  errors: [],
+  responses: [
+    {
+      version: 1,
+      timestamp: null,
+      response: [Object],
+      payload: <Buffer 0a 20 53 b6 ce fb 38 99 0c f7 17 1f d8 05 21 9e bf 65 02 af f0 bf c9 f6 2a 87 10 f8 27 0f 2f d1 56 7f 12 f3 02 0a d9 01 12 36 0a 0a 5f 6c 69 66 65 63 ... 358 more bytes>,
+      endorsement: [Object],
+      connection: [Object],
+      peer: 'peer0.org1.example.com:7051'
+    },
+    {
+      version: 1,
+      timestamp: null,
+      response: [Object],
+      payload: <Buffer 0a 20 53 b6 ce fb 38 99 0c f7 17 1f d8 05 21 9e bf 65 02 af f0 bf c9 f6 2a 87 10 f8 27 0f 2f d1 56 7f 12 f3 02 0a d9 01 12 36 0a 0a 5f 6c 69 66 65 63 ... 358 more bytes>,
+      endorsement: [Object],
+      connection: [Object],
+      peer: 'peer0.org2.example.com:9051'
+    }
+  ]
+}
+
